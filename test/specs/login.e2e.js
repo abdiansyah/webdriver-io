@@ -9,8 +9,9 @@ describe('Travelio - Authentication Login', () => {
             await LoginPage.dismissPopup.click()
         }
         await LoginPage.loginPageButton.click()
+        await expect(await LoginPage.inputEmail).toBeDisplayed()
         await LoginPage.login('abdiansyahzexu@gmail.com', 'Bismillah123')
-        expect(await VerificationPage.accountName.getText()).toBe('Abdiansyah')
+        await expect(await VerificationPage.accountName.getText()).toBe('Abdiansyah')
     })
 })
 
